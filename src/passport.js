@@ -18,6 +18,7 @@ passport.use(new GoogleStrategy({
                     emailId: profile.id
                 });
                 
+                console.log("profile.id = ", profile.id)
                 if (!checkUser) {
                     await User.create({
                         emailId: profile.id,
