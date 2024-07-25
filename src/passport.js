@@ -9,7 +9,7 @@ require('dotenv').config()
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: `${process.env.URL_SERVER}/api/auth/google/callback`
+    callbackURL: `${process.env.URL_CLIENT}api/auth/google/callback`
 },
     async function (accessToken, refreshToken, profile, cb) {
         try {
