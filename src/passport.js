@@ -9,7 +9,7 @@ require('dotenv').config()
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: `${process.env.URL_SERVER}/api/auth/google/callback`
+    callbackURL: `${process.env.URL_CLIENT}/api/auth/google/callback`
 },
     async function (accessToken, refreshToken, profile, cb) {
         try {
@@ -41,7 +41,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: `${process.env.URL_SERVER}/api/auth/facebook/callback`,
+    callbackURL: `${process.env.URL_CLIENT}/api/auth/facebook/callback`,
     profileFields: ['id', 'email', 'photos', 'name', 'displayName'],
 },
     async function (accessToken, refreshToken, profile, cb) {
